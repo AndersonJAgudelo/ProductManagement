@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProductsManagement.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>Products</h1>
+
+<form>
+    <button style="background-color: transparent; color: green" asp-action="Create">New Product</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<form>
+    <button id="button" style="background-color: transparent; color: green" asp-action="Check">Change context</button>
+</form>
